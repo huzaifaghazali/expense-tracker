@@ -18,7 +18,16 @@ const addIncome = async (req, res) => {
     }
 
     await income.save();
-    res.status(200).json({message: 'Income added successfully!'})
+    res.status(200).json({ message: 'Income added successfully!' });
+  } catch (error) {
+    res.status(500).json({ message: 'Server Error' });
+  }
+};
+
+const getIncome = async (req, res) => {
+  try {
+    const incomes = await IncomeSchema.find().sort({ createdAt: -1 });
+    res.status(200).json(incomes);
   } catch (error) {
     res.status(500).json({ message: 'Server Error' });
   }
@@ -26,4 +35,5 @@ const addIncome = async (req, res) => {
 
 module.exports = {
   addIncome,
+  getIncome,
 };
