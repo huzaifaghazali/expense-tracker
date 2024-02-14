@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 import { MainLayout } from './styles/Layout';
+import { useMemo } from 'react';
+import Orb from './Components/Orb';
 
 function App() {
+
+  const orbMemo = useMemo(() => {
+    return <Orb />
+  }, [])
   return (
     <AppStyled>
+     {orbMemo}
       <MainLayout>
          
         <main>
