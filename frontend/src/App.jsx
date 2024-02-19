@@ -5,6 +5,7 @@ import Orb from './Components/Orb';
 import Navigation from './Components/Navigation';
 import { useState } from 'react';
 import Dashboard from './Components/Dashboard';
+import Income from './Components/income';
 
 function App() {
   const [active, setActive] = useState(1);
@@ -15,8 +16,8 @@ function App() {
         return <Dashboard />
       case 2:
         return <Dashboard />
-      // case 3:
-      //   return <Income />
+      case 3:
+        return <Income />
       // case 4: 
       //   return <Expenses />
       default: 
