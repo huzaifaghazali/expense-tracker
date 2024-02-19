@@ -2,19 +2,22 @@ import styled from 'styled-components';
 import { MainLayout } from './styles/Layout';
 import { useMemo } from 'react';
 import Orb from './Components/Orb';
+import Navigation from './Components/Navigation';
+import { useState } from 'react';
 
 function App() {
+  const [active, setActive] = useState(1);
 
   const orbMemo = useMemo(() => {
-    return <Orb />
-  }, [])
+    return <Orb />;
+  }, []);
   return (
     <AppStyled>
-     {orbMemo}
+      {orbMemo}
       <MainLayout>
-         
-        <main>
-        </main>
+        <Navigation active={active} setActive={setActive} />
+
+        <main></main>
       </MainLayout>
     </AppStyled>
   );
