@@ -5,6 +5,7 @@ import { InnerLayout } from '../styles/Layout';
 import { dollar } from '../utils/Icons';
 import Chart from './Chart';
 import { useGlobalContext } from '../context/globalContext';
+import History from './History';
 
 function Dashboard() {
   const {
@@ -51,7 +52,7 @@ function Dashboard() {
             </div>
           </div>
           <div className='history-con'>
-            {/* <History /> */}
+            <History />
             <h2 className='salary-title'>
               Min <span>Salary</span>Max
             </h2>
