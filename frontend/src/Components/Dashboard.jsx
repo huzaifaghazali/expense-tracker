@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { InnerLayout } from '../styles/Layout';
 import { dollar } from '../utils/Icons';
+import Chart from './Chart';
+
 function Dashboard() {
   return (
     <DashboardStyled>
@@ -10,7 +12,7 @@ function Dashboard() {
         <h1>All Transactions</h1>
         <div className='stats-con'>
           <div className='chart-con'>
-            {/* <Chart /> */}
+            <Chart />
             <div className='amount-con'>
               <div className='income'>
                 <h2>Total Income</h2>
