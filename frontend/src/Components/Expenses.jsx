@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import { useGlobalContext } from '../context/globalContext';
 import { InnerLayout } from '../styles/Layout';
 import IncomeItem from './IncomeItem';
+import ExpenseForm from './ExpenseForm';
 
 function Expenses() {
-  const { addIncome, expenses, getExpenses, deleteExpense, totalExpenses } =
+  const { expenses, getExpenses, deleteExpense, totalExpenses } =
     useGlobalContext();
 
   useEffect(() => {
@@ -20,7 +21,9 @@ function Expenses() {
           Total Expense: <span>${totalExpenses()}</span>
         </h2>
         <div className='income-content'>
-          <div className='form-container'>{/* <ExpenseForm /> */}</div>
+          <div className='form-container'>
+            <ExpenseForm />
+          </div>
           <div className='incomes'>
             {expenses.map((expense) => {
               const { _id, title, amount, date, category, description, type } =
