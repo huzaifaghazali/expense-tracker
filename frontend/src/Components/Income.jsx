@@ -1,21 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 import { InnerLayout } from '../styles/Layout';
+import { useGlobalContext } from '../context/globalContext';
+import Form from './Form';
 
 function Income() {
+  const { addIncome } = useGlobalContext();
+
   return (
     <IncomeStyled>
-     
       <InnerLayout>
         <h1>Incomes</h1>
-        <h2 className="total-income">Total Income: <span>1234</span></h2>
-        <div className="income-content">
-         <div className="form-container">
-            {/* <Form /> */}
-         </div>
-         <div className="incomes">
-            
-         </div>
+        <h2 className='total-income'>
+          Total Income: <span>1234</span>
+        </h2>
+        <div className='income-content'>
+          <div className='form-container'>
+            <Form />
+          </div>
+          <div className='incomes'></div>
         </div>
       </InnerLayout>
     </IncomeStyled>
